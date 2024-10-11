@@ -25,10 +25,10 @@ function UrlForm() {
       />
 
       <input
-        type='text'
+        type='urlShort'
         placeholder='URL to Shorten...'
-        name='title'
-        value={title}
+        name='urlShort'
+        value={urlToShorten}
         // onChange={e => }
       />
 
