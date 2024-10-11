@@ -5,11 +5,11 @@ import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
 function App() {
-  const [urls, setUrls] = useState(["abcdefg", "hijklmnop"]);
+  const [urls, setUrls] = useState([]);
   useEffect(() => {
   console.log(getUrls())
     getUrls().then((data) => {
-      setUrls([data.urls[0].long_url, data.urls[0].short_url]);
+      setUrls([data.urls]);
     });
   
   },[])
@@ -19,9 +19,9 @@ function App() {
     <main className="App">
       <header>
         <h1>URL Shortener</h1>
-        <UrlForm />
+        <UrlForm  urls={urls} seturls={setUrls}/>
       </header>
-      <UrlContainer urls={urls} />
+      <UrlContainer key={0} urls={urls} />
     </main>
   );
 }
